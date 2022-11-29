@@ -31,6 +31,7 @@ posts_schema = PostSchema(many=True)
 
 @app.route('/post', methods=['POST'])
 def add_post():
+    print("inside route")
     u_id = request.json['u_id']
     print("u_id", u_id)
     # u_id = 10

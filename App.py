@@ -32,9 +32,11 @@ posts_schema = PostSchema(many=True)
 @app.route('/post', methods=['POST'])
 def add_post():
     u_id = request.json['u_id']
+    print("u_id", u_id)
     # u_id = 10
     d_token = request.json['d_token']
     fcm.sendPush("Hi", "This is my next msg", [d_token])
+    print("d_token=", d_token)
     # d_token = "test data"
     my_posts = Testdb(u_id, d_token)
     db.session.add(my_posts)

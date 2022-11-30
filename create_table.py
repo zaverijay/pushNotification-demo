@@ -1,5 +1,5 @@
 import psycopg2
-from config import config
+# from config import config
 
 
 def create_tables():
@@ -19,9 +19,9 @@ def create_tables():
 	conn = None
 	try:
 		# read the connection parameters
-		params = config()
+		# params = config()
 		# connect to the PostgreSQL server
-		conn = psycopg2.connect(**params)
+		conn = psycopg2.connect("postgresql://test_db_uodg_user:xLjrLk3HhNOZSdn2DZa2jFznzRqEfxO5@dpg-ce3cl3la4999gmei5i9g-a.oregon-postgres.render.com/test_db_uodg")
 		cur = conn.cursor()
 		# create table one by one
 		for command in commands:
